@@ -38,5 +38,13 @@ export const experience: Experience[] = [
 		description:
 			'Built the competition scoring frontend for Kementerian Agama from scratch — HTML, CSS, Bootstrap — and integrated it with backend APIs. Also resolved backend bugs improving overall system reliability.',
 		tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript']
+	},
+	{
+		period: 'Sep 2021 — Jan 2022',
+		role: 'Online IT Bootcamp',
+		company: 'PT Enigma Cipta Humanika',
+		description:
+			'Completed an intensive online IT bootcamp covering full-stack web development fundamentals. Gained foundational knowledge in JavaScript, front-end and back-end technologies, and software development best practices that paved the way for my career in tech.',
+		tech: ['JavaScript', 'HTML', 'CSS', 'Git']
 	}
 ];

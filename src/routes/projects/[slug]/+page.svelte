@@ -54,6 +54,9 @@
 
 	<div class="cover-image" use:reveal>
 		<div class="cover-stripes"></div>
+		{#if p.image}
+			<img src={p.image} alt={p.title} class="cover-img" />
+		{/if}
 		<div class="cover-label">
 			<span>PROJECT COVER</span>
 			<span class="cover-sub">// {p.index}</span>
@@ -80,6 +83,32 @@
 			</div>
 		</div>
 	</div>
+
+	{#if p.description}
+		<div class="section-divider"></div>
+
+		<div class="description-section">
+			<div class="section-container">
+				<div class="description-grid" use:reveal>
+					<div class="description-col">
+						<div class="detail-col-label">// Description</div>
+					</div>
+					<div class="description-content">
+						{@html p.description}
+					</div>
+				</div>
+				{#if p.repo}
+					<div class="repo-row" use:reveal={200}>
+						<a href={p.repo} target="_blank" rel="noopener" class="repo-btn">
+							View Source Code ↗
+						</a>
+					</div>
+				{/if}
+			</div>
+		</div>
+	{/if}
+
+	<div class="section-divider"></div>
 </main>
 
 <Footer />
@@ -207,6 +236,15 @@
 		position: absolute;
 		inset: 0;
 		background: repeating-linear-gradient(-45deg, transparent, transparent 11px, rgba(255,255,255,0.011) 11px, rgba(255,255,255,0.011) 12px);
+		z-index: 1;
+		pointer-events: none;
+	}
+	.cover-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		inset: 0;
 	}
 	.cover-label {
 		font-family: var(--font-mono);
@@ -216,7 +254,7 @@
 		text-transform: uppercase;
 		text-align: center;
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
@@ -249,10 +287,59 @@
 		color: var(--text-base);
 	}
 
+	.description-section { padding: 80px 0; }
+	.description-grid {
+		display: grid;
+		grid-template-columns: 180px 1fr;
+		gap: 48px;
+		align-items: start;
+	}
+	.description-content {
+		font-size: 0.95rem;
+		color: var(--text-soft);
+		line-height: 1.85;
+		max-width: 68ch;
+	}
+	.description-content :global(p) {
+		margin-bottom: 16px;
+	}
+	.description-content :global(p:last-child) {
+		margin-bottom: 0;
+	}
+	.description-content :global(b) {
+		color: var(--text-base);
+		font-weight: 600;
+	}
+	.repo-row {
+		margin-top: 40px;
+		padding-top: 32px;
+		border-top: 1px solid var(--border-faint);
+	}
+	.repo-btn {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+		text-decoration: none;
+		border: 1px solid var(--border-soft);
+		padding: 10px 20px;
+		background: transparent;
+		clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+		transition: color 0.2s, border-color 0.2s, background 0.2s;
+		display: inline-block;
+	}
+	.repo-btn:hover {
+		color: var(--text-base);
+		border-color: var(--border-hard);
+		background: var(--bg-elevated);
+	}
+
 	@media (max-width: 768px) {
 		.back-row { padding: 24px 20px 0; }
 		.section-container { padding: 0 20px; }
 		.detail-grid { grid-template-columns: 1fr; }
+		.description-grid { grid-template-columns: 1fr; gap: 24px; }
 	}
 	@media (max-width: 480px) {
 		.section-container { padding: 0 16px; }

@@ -16,28 +16,36 @@
 				</div>
 			</div>
 			<div class="about-sidebar" use:reveal={200}>
-				<div class="about-photo">
-					<div class="about-photo-stripes"></div>
-					<div class="about-photo-label">PHOTO<br/>PLACEHOLDER<br/><br/><span>drag to replace</span></div>
+			<div class="about-photo">
+				<div class="about-photo-stripes"></div>
+				<img src="/images/profile-pic.jpeg" alt="Fadhil Andriawan" class="about-photo-img" />
+			</div>
+			<div class="about-facts">
+				<div class="about-fact">
+					<span class="fact-label">{$t('about.fact1')}</span>
+					<span class="fact-value">3+ YRS</span>
 				</div>
-				<div class="about-facts">
-					<div class="about-fact">
-						<span class="fact-label">{$t('about.fact1')}</span>
-						<span class="fact-value">3+ YRS</span>
-					</div>
-					<div class="about-fact">
-						<span class="fact-label">{$t('about.fact2')}</span>
-						<span class="fact-value">FULL-STACK</span>
-					</div>
-					<div class="about-fact">
-						<span class="fact-label">{$t('about.fact3')}</span>
-						<span class="fact-value">JAKARTA</span>
-					</div>
-					<div class="about-fact">
-						<span class="fact-label">TOEIC</span>
-						<span class="fact-value">660</span>
-					</div>
+				<div class="about-fact">
+					<span class="fact-label">{$t('about.fact2')}</span>
+					<span class="fact-value">FULL-STACK</span>
 				</div>
+				<div class="about-fact">
+					<span class="fact-label">{$t('about.fact3')}</span>
+					<span class="fact-value">JAKARTA</span>
+				</div>
+				<div class="about-fact">
+					<span class="fact-label">EDUCATION</span>
+					<span class="fact-value">{$t('about.edu')}</span>
+				</div>
+				<div class="about-fact">
+					<span class="fact-label">{$t('about.gpa')}</span>
+					<span class="fact-value">3.39</span>
+				</div>
+				<div class="about-fact">
+					<span class="fact-label">TOEIC</span>
+					<span class="fact-value">660</span>
+				</div>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -104,20 +112,15 @@
 		position: absolute;
 		inset: 0;
 		background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.013) 8px, rgba(255,255,255,0.013) 9px);
-	}
-	.about-photo-label {
-		font-family: var(--font-mono);
-		font-size: 9px;
-		letter-spacing: 0.15em;
-		color: var(--text-muted);
-		text-align: center;
-		line-height: 1.9;
-		position: relative;
 		z-index: 1;
+		pointer-events: none;
 	}
-	.about-photo-label span {
-		font-size: 8px;
-		color: var(--border-hard);
+	.about-photo-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		inset: 0;
 	}
 	.about-facts {
 		display: flex;
