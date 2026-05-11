@@ -8,7 +8,7 @@
 	}
 	let { project, index: i }: Props = $props();
 
-	const { title, live, slug, index, blurb, stack, year, type } = project;
+	const { title, live, slug, index, blurb, stack, year, type, image } = project;
 	const GC = '!<>-_\\/[]{}—=+*^?#$@%&';
 	let titleEl: HTMLElement;
 	let _glitching = false;
@@ -40,8 +40,8 @@
 		}, 40);
 	}
 
-	const href = live ?? (slug ? `/projects/${slug}` : '#');
-	const isExternal = !!live;
+	const href = slug ? `/projects/${slug}` : '#';
+	const isExternal = false;
 </script>
 
 <a
@@ -53,6 +53,12 @@
 	onmouseenter={glitchTitle}
 >
 	<div class="project-card-image">
+		{#if image}
+			<picture>
+				<source srcset={image.replace(/\.(jpe?g|png)$/, '.webp')} type="image/webp" />
+				<img src={image} alt={title} class="card-img" />
+			</picture>
+		{/if}
 		<div class="pc-stripes"></div>
 		<div class="pc-label">
 			<span>COVER IMAGE</span>
@@ -71,7 +77,7 @@
 		</div>
 		<div class="project-meta-row">
 			<span class="project-year">→ {year}</span>
-			<span class="project-arrow">{live ? '↗' : '→'}</span>
+			<span class="project-arrow">→</span>
 		</div>
 	</div>
 </a>
@@ -101,6 +107,14 @@
 		position: absolute;
 		inset: 0;
 		background: repeating-linear-gradient(-45deg, transparent, transparent 11px, rgba(255,255,255,0.011) 11px, rgba(255,255,255,0.011) 12px);
+		z-index: 1;
+	}
+	.card-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		inset: 0;
 	}
 	.pc-label {
 		position: absolute;
