@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/projects';
+	import { reveal } from '$lib/actions/reveal';
 
 	interface Props {
 		project: Project;
@@ -45,8 +46,8 @@
 
 <a
 	{href}
-	class="project-card reveal"
-	style="transition-delay: {i * 55}ms"
+	use:reveal={i * 55}
+	class="project-card"
 	target={isExternal ? '_blank' : undefined}
 	rel={isExternal ? 'noopener' : undefined}
 	onmouseenter={glitchTitle}
