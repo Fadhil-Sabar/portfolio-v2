@@ -18,7 +18,10 @@
 			<div class="about-sidebar" use:reveal={200}>
 			<div class="about-photo">
 				<div class="about-photo-stripes"></div>
-				<img src="/images/profile-pic.jpeg" alt="Fadhil Andriawan" class="about-photo-img" />
+				<picture>
+					<source srcset="/images/profile-pic.webp" type="image/webp" />
+					<img src="/images/profile-pic.jpeg" alt="Fadhil Andriawan" class="about-photo-img" />
+				</picture>
 			</div>
 			<div class="about-facts">
 				<div class="about-fact">

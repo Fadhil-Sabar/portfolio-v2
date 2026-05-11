@@ -55,7 +55,10 @@
 	<div class="cover-image" use:reveal>
 		<div class="cover-stripes"></div>
 		{#if p.image}
-			<img src={p.image} alt={p.title} class="cover-img" />
+			<picture>
+				<source srcset={p.image.replace(/\.(jpe?g|png)$/, '.webp')} type="image/webp" />
+				<img src={p.image} alt={p.title} class="cover-img" />
+			</picture>
 		{/if}
 		<div class="cover-label">
 			<span>PROJECT COVER</span>
