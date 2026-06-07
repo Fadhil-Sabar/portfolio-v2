@@ -33,10 +33,10 @@
 					</div>
 					<span class="cl-arrow">→</span>
 				</a>
-				<a href="https://fadhil-andriawan.dev" target="_blank" rel="noopener" class="contact-link">
+				<a href="https://log.fadhil-andriawan.dev" target="_blank" rel="noopener" class="contact-link">
 					<div>
-						<div class="cl-label">Portfolio Live</div>
-						<div class="cl-value">fadhil-andriawan.dev</div>
+						<div class="cl-label">Blog</div>
+						<div class="cl-value">log.fadhil-andriawan.dev</div>
 					</div>
 					<span class="cl-arrow">→</span>
 				</a>
