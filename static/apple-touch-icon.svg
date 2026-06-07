@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
+  <rect x="4" y="4" width="172" height="172" rx="44" stroke="#F2EDE4" stroke-width="8"/>
+  <path d="M28 48l20 42-20 42M152 48l-20 42 20 42" stroke="#F2EDE4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="90" y="130" text-anchor="middle" fill="#A67C52" font-size="90" font-weight="700" font-family="Inter,-apple-system,sans-serif">F</text>
+</svg>
