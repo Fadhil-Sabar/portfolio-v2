@@ -13,9 +13,24 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/favicon.svg" />
+
 		<!-- DNS prefetch for assets -->
 		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
 		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+		%sveltekit.head%
+
+		<script>
+			(function() {
+				try {
+					var lang = localStorage.getItem('pf-lang');
+					if (lang === 'id') document.documentElement.lang = 'id';
+				} catch(e) {}
+			})();
+		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>

@@ -67,7 +67,7 @@ export interface Project {
 			stack: ['Laravel', 'PHP', 'MySQL', 'JavaScript'],
 			live: 'https://marinews.mahkamahagung.go.id',
 			repo: '',
-			image: '/images/projects/project8.png'
+			image: '/images/projects/project8.webp'
 		},
 		{
 			slug: 'truck-booking-mfe',
@@ -170,7 +170,7 @@ export interface Project {
 			stack: ['React', 'Express.js', 'Oracle DB'],
 			live: 'https://parama.pelindo.co.id',
 			repo: null,
-			image: '/images/projects/project7.jpg'
+			image: '/images/projects/project7.png'
 		},
 		{
 			slug: 'quran-reader',

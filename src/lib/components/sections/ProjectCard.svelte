@@ -8,7 +8,7 @@
 	}
 	let { project, index: i }: Props = $props();
 
-	const { title, live, slug, index, blurb, stack, year, type, image } = project;
+	let { title, live, slug, index, blurb, stack, year, type, image } = $derived(project);
 	const GC = '!<>-_\\/[]{}—=+*^?#$@%&';
 	let titleEl: HTMLElement;
 	let _glitching = false;
@@ -40,7 +40,7 @@
 		}, 40);
 	}
 
-	const href = slug ? `/projects/${slug}` : '#';
+	let href = $derived(slug ? `/projects/${slug}` : '#');
 	const isExternal = false;
 </script>
 

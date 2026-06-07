@@ -7,16 +7,16 @@
 	import Footer from '$lib/components/sections/Footer.svelte';
 
 	let { data }: { data: PageData } = $props();
-	const { project: p } = data;
+	let p = $derived(data.project);
 
 	const SITE = 'https://fadhil-andriawan.dev';
-	const DESC = p.blurb;
-	const URL = SITE + '/projects/' + p.slug;
-	const OG_IMAGE = p.image ? SITE + p.image : SITE + '/images/profile-pic.jpeg';
+	let DESC = $derived(p.blurb);
+	let URL = $derived(SITE + '/projects/' + p.slug);
+	let OG_IMAGE = $derived(p.image ? SITE + p.image : SITE + '/images/profile-pic.jpeg');
 
-	const fullTitle = p.title + ' — Fadhil Andriawan';
+	let fullTitle = $derived(p.title + ' — Fadhil Andriawan');
 
-	const webpageSchema = {
+	let webpageSchema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'WebPage',
 		name: fullTitle,
@@ -35,9 +35,9 @@
 			'@type': 'Person',
 			name: 'Fadhil Andriawan'
 		}
-	};
+	});
 
-	const ldHtml = `<script type="application/ld+json">${JSON.stringify(webpageSchema)}<\/script>`;
+	let ldHtml = $derived(`<script type="application/ld+json">${JSON.stringify(webpageSchema)}<\/script>`);
 </script>
 
 <svelte:head>

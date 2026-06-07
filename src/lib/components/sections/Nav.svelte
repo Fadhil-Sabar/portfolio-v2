@@ -9,7 +9,7 @@
 </script>
 
 <nav>
-	<a href="#hero" class="nav-logo">Fadhil.dev</a>
+	<a href="/#hero" class="nav-logo">Fadhil.dev</a>
 	<ul class="nav-center">
 		<li><a href="/#about"      onclick={closeMenu}>{$t('nav.about')}</a></li>
 		<li><a href="/#projects"   onclick={closeMenu}>{$t('nav.projects')}</a></li>
