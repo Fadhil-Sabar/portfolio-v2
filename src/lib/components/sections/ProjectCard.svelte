@@ -115,6 +115,11 @@
 		object-fit: cover;
 		position: absolute;
 		inset: 0;
+		filter: grayscale(1);
+		transition: filter 0.4s ease;
+	}
+	.project-card:hover .card-img {
+		filter: grayscale(0);
 	}
 	.pc-label {
 		position: absolute;
@@ -160,9 +165,9 @@
 		margin-bottom: 8px;
 	}
 	.project-blurb {
-		font-size: 0.825rem;
-		color: var(--text-muted);
-		line-height: 1.65;
+		font-size: 0.875rem;
+		color: var(--text-soft);
+		line-height: 1.7;
 		margin-bottom: 16px;
 	}
 	.project-tags {

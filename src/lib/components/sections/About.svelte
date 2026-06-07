@@ -124,6 +124,11 @@
 		object-fit: cover;
 		position: absolute;
 		inset: 0;
+		filter: grayscale(1);
+		transition: filter 0.4s ease;
+	}
+	.about-photo:hover .about-photo-img {
+		filter: grayscale(0);
 	}
 	.about-facts {
 		display: flex;
@@ -153,6 +158,8 @@
 		font-size: 11px;
 		color: var(--text-base);
 		letter-spacing: 0.05em;
+		text-align: right;
+		max-width: 55%;
 	}
 
 	@media (max-width: 900px) {

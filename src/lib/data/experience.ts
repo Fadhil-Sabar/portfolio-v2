@@ -8,15 +8,15 @@ export interface Experience {
 
 export const experience: Experience[] = [
 	{
-		period: 'Sep 2023 — Present',
+		period: 'Sep 2023 - Present',
 		role: 'Software Developer',
 		company: 'PT. Integrasi Logistik Cipta Solusi · Jakarta Utara',
 		description:
-			'Developed and maintained the SAP integration for Praya Single Billing — a mission-critical system processing IDR 150M–1B+ per port daily across 13 Indonesian ports. Built the full-stack Truck Booking System, engineered Oracle PL/SQL procedures, and provided live production support to ensure high system stability.',
+			'Developed and maintained the SAP integration for Praya Single Billing, a mission-critical system processing IDR 150M-1B+ per port daily across 13 Indonesian ports. Built the full-stack Truck Booking System, engineered Oracle PL/SQL procedures, and provided live production support to ensure high system stability.',
 		tech: ['React', 'Express.js', 'Oracle DB', 'PL/SQL', 'TypeScript', 'Next.js']
 	},
 	{
-		period: 'Feb 2022 — Sep 2023',
+		period: 'Feb 2022 - Sep 2023',
 		role: 'L2 Developer',
 		company: 'PT. Integrasi Logistik Cipta Solusi · Jakarta Utara',
 		description:
@@ -24,7 +24,7 @@ export const experience: Experience[] = [
 		tech: ['JavaScript', 'SQL', 'Linux']
 	},
 	{
-		period: 'Jun 2024 — Sep 2024',
+		period: 'Jun 2024 - Sep 2024',
 		role: 'Frontend Web Developer',
 		company: 'Mahatech · Remote, Freelance',
 		description:
@@ -36,11 +36,11 @@ export const experience: Experience[] = [
 		role: 'Frontend Web Developer',
 		company: 'Ideatech · Remote, Freelance',
 		description:
-			'Built the competition scoring frontend for Kementerian Agama from scratch — HTML, CSS, Bootstrap — and integrated it with backend APIs. Also resolved backend bugs improving overall system reliability.',
+			'Built the competition scoring frontend for Kementerian Agama from scratch, HTML, CSS, Bootstrap, and integrated it with backend APIs. Also resolved backend bugs improving overall system reliability.',
 		tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript']
 	},
 	{
-		period: 'Sep 2021 — Jan 2022',
+		period: 'Sep 2021 - Jan 2022',
 		role: 'Online IT Bootcamp',
 		company: 'PT Enigma Cipta Humanika',
 		description:

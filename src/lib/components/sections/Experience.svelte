@@ -105,8 +105,8 @@
 		margin-bottom: 14px;
 	}
 	.timeline-desc {
-		font-size: 0.85rem;
-		color: var(--text-muted);
+		font-size: 0.875rem;
+		color: var(--text-soft);
 		line-height: 1.75;
 		max-width: 58ch;
 	}

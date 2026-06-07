@@ -4,7 +4,7 @@ import { writable } from 'svelte/store';
 export type Lang = 'id' | 'en';
 
 const stored = browser ? (localStorage.getItem('pf-lang') as Lang | null) : null;
-export const lang = writable<Lang>(stored ?? 'id');
+export const lang = writable<Lang>(stored ?? 'en');
 
 export function setLang(l: Lang) {
 	lang.set(l);

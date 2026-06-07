@@ -248,6 +248,11 @@
 		object-fit: cover;
 		position: absolute;
 		inset: 0;
+		filter: grayscale(1);
+		transition: filter 0.4s ease;
+	}
+	.cover-image:hover .cover-img {
+		filter: grayscale(0);
 	}
 	.cover-label {
 		font-family: var(--font-mono);
