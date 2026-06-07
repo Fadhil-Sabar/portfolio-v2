@@ -37,7 +37,7 @@ export const projects: Project[] = [
 		blurb: "Employment expansion platform for Indonesia's Ministry of Manpower. Chat feature, admin panel, 10K+ daily users.",
 		description: `<p>This project is built for Kemnaker (Indonesia Ministry of Manpower). The platform facilitates every citizen in the context of the employment expansion program.</p>
 <p>I was responsible for the front-end development, especially for building the chat feature, integrating it with back-end services, maintaining mobile-friendly pages, bug fixing, and creating admin pages.</p>
-<p>I learned a lot from this project, especially TypeScript, Tailwind CSS, and Next.js. I also improved my communication skills working with teammates, and learned a great deal from my seniors.</p>`,
+<p>I learned a lot from this project, especially TypeScript, Tailwind CSS, and Next.js. I also improved my communication skills working with teammates, and learned a great deal from my teams.</p>`,
 		year: '2024',
 		role: 'Frontend Developer',
 		type: 'Group · Mahatech',
@@ -51,8 +51,9 @@ export const projects: Project[] = [
 		index: '003',
 		title: 'Truck Booking System - MFE',
 		blurb: 'Micro-frontend for port truck logistics.',
-		description: `<p>This project was made for rebuilding the Truck Booking System into new project for MFE. The actual TBS is does need a lot of configuration just for integrating MFE. So we made decision to create a new project just for integrating it.</p>
-		<p>In this project, I learn a lot to use Tanstack, Micro frontend, and Typescript. I wanna challenge myself to build this one using new stack. Currently it is active on Adhara web page (which is portal for Pelindo's application) and can be used properly in production.</p>
+		description: `<p>This project was built to rebuild the Truck Booking System (TBS) into a new Micro Frontend architecture. The original TBS required a lot of configuration just to integrate MFE, so we decided to create a new project from scratch dedicated solely to that integration.</p>
+		<p>Throughout this project, I learned a great deal about TanStack, Micro Frontend, and TypeScript. It was a deliberate challenge to build with an entirely new stack and step out of my comfort zone. There were learning curves along the way, but the result was really worth. 
+Currently the system is live on the Adhara web page, Pelindo's application portal, and running stably in production since deployment.</p>
 		`,
 		year: '2025',
 		role: 'Fullstack Developer',
