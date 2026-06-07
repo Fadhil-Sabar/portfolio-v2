@@ -47,6 +47,22 @@ export const projects: Project[] = [
 		image: '/images/projects/project3.jpg'
 	},
 	{
+		slug: 'parama',
+		index: '007',
+		title: 'Parama Customer Portal',
+		blurb: 'Maintained and enhanced an enterprise customer portal, bug fixing, minor feature development, and production issue resolution using React, Express.js, and Oracle PL/SQL.',
+		description: `As a Software Developer on the Parama Customer Portal, I was responsible for maintaining and enhancing a web-based customer portal serving enterprise clients. My work involved identifying and resolving software defects across multiple modules to ensure system stability, as well as developing minor feature enhancements based on business requirements and user feedback. I collaborated closely with the internal team to ensure all changes adhered to the existing architecture and coding standards.
+
+Beyond feature work, I conducted systematic debugging and root cause analysis to address production issues efficiently, minimizing downtime and improving overall application reliability. This role strengthened my ability to work within an established codebase, prioritize fixes based on impact, and deliver consistent value through both maintenance and incremental improvements.`,
+		year: '2024',
+		role: 'Fullstack Developer',
+		type: 'Group · PT. ILCS',
+		stack: ['React', 'Express.js', 'Oracle DB', 'SAP'],
+		live: null,
+		repo: null,
+		image: '/images/projects/project4.jpg'
+	},
+	{
 		slug: 'truck-booking-mfe',
 		index: '003',
 		title: 'Truck Booking System - MFE',
