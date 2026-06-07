@@ -23,7 +23,7 @@ export interface Project {
 			description: `<p>I built this project because I wanted a clean, private interface for chatting with local LLMs through Ollama. Most existing UIs felt bloated or required a backend, so I made one that runs entirely in the browser with zero server dependencies.</p>
 	<p>The interface uses a Zinc minimalist monochromatic palette with full dark and light mode support. I integrated local RAG so users can attach .txt or .md files as context for the model, plus web link analysis through Jina Reader that lets the model fetch and process live web content autonomously via Ollama's tools API. There is also a web search tool integration for real time information retrieval.</p>
 	<p>For conversation management I built thread organization with create, rename, and delete capabilities, all persisted in LocalStorage. The chat uses Ollama's streaming API with a sliding window of the last 10 messages to maintain context without memory bloat. There is smart auto scroll that only anchors to the bottom when the user is already at the latest message, allowing uninterrupted reading of history during generation.</p>
-	<p>The tech stack is intentionally simple: vanilla HTML, CSS with Tailwind via CDN, and jQuery with Marked.js for rendering. No build step, no Node.js or Python server, just open index.html and start chatting.</p>`,
+	<p>The tech stack is just using vanilla HTML, CSS with Tailwind via CDN, and jQuery with Marked.js for rendering.</p>`,
 			year: '2026',
 			role: 'Solo Developer',
 			type: 'Personal',
