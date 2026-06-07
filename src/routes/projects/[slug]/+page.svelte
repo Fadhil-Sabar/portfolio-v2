@@ -8,12 +8,63 @@
 
 	let { data }: { data: PageData } = $props();
 	const { project: p } = data;
+
+	const SITE = 'https://fadhil-andriawan.dev';
+	const DESC = p.blurb;
+	const URL = SITE + '/projects/' + p.slug;
+	const OG_IMAGE = p.image ? SITE + p.image : SITE + '/images/profile-pic.jpeg';
+
+	const fullTitle = p.title + ' — Fadhil Andriawan';
+
+	const webpageSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: fullTitle,
+		description: DESC,
+		url: URL,
+		image: OG_IMAGE,
+		inLanguage: 'en',
+		about: {
+			'@type': 'SoftwareApplication',
+			name: p.title,
+			applicationCategory: 'WebApplication',
+			operatingSystem: 'Web',
+			description: p.blurb
+		},
+		author: {
+			'@type': 'Person',
+			name: 'Fadhil Andriawan'
+		}
+	};
+
+	const ldHtml = `<script type="application/ld+json">${JSON.stringify(webpageSchema)}<\/script>`;
 </script>
 
 <svelte:head>
 	<title>{p.title} — Fadhil Andriawan</title>
 	<meta name="description" content={p.blurb} />
+	<link rel="canonical" href={URL} />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="{p.title} — Fadhil Andriawan" />
+	<meta property="og:description" content={p.blurb} />
+	<meta property="og:url" content={URL} />
+	<meta property="og:image" content={OG_IMAGE} />
+	<meta property="og:image:alt" content={p.title} />
+	<meta property="og:type" content="article" />
+	<meta property="og:site_name" content="Fadhil Andriawan" />
+	<meta property="og:locale" content="en_US" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{p.title} — Fadhil Andriawan" />
+	<meta name="twitter:description" content={p.blurb} />
+	<meta name="twitter:image" content={OG_IMAGE} />
+	<meta name="twitter:image:alt" content={p.title} />
+
 </svelte:head>
+
+{@html ldHtml}
 
 <NoiseOverlay />
 <Cursor />

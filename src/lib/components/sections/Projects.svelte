@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
-	import { projects } from '$lib/data/projects';
+	import { projects, projectCategories } from '$lib/data/projects';
 	import { t } from '$lib/stores/t';
 	import ProjectCard from './ProjectCard.svelte';
 </script>
@@ -9,11 +9,21 @@
 	<div class="section-container">
 		<div class="section-label" use:reveal>// 01 — Selected Work</div>
 		<h2 class="section-title" use:reveal>{$t('projects.title')}</h2>
-		<div class="projects-grid">
-			{#each projects as project, i}
-				<ProjectCard {project} index={i} />
-			{/each}
-		</div>
+
+		{#each projectCategories as category, i}
+			{@const filtered = projects.filter((p) => p.category === category)}
+			{@const label = $t(category === 'work' ? 'projects.work' : 'projects.personal')}
+			<div class="sub-section">
+				<div class="sub-label" use:reveal>
+					// {String(i + 1).padStart(2, '0')} — {label}
+				</div>
+				<div class="projects-grid">
+					{#each filtered as project, j}
+						<ProjectCard {project} index={j} />
+					{/each}
+				</div>
+			</div>
+		{/each}
 	</div>
 </section>
 
@@ -42,6 +52,23 @@
 		color: var(--text-bright);
 		line-height: 1.05;
 		margin-bottom: 56px;
+	}
+	.sub-section {
+		margin-bottom: 56px;
+	}
+	.sub-section:last-child {
+		margin-bottom: 0;
+	}
+	.sub-label {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		letter-spacing: 0.15em;
+		color: var(--text-muted);
+		text-transform: uppercase;
+		margin-bottom: 24px;
+		display: flex;
+		align-items: center;
+		gap: 14px;
 	}
 	.projects-grid {
 		display: grid;
