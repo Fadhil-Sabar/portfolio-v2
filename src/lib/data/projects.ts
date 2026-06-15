@@ -73,7 +73,7 @@ export interface Project {
 			slug: 'truck-booking-mfe',
 			index: '003',
 			title: 'Truck Booking System - MFE',
-			blurb: 'Micro-frontend for port truck logistics.',
+			blurb: 'Micro-frontend rebuild of port truck logistics booking system using Next.js, TypeScript, and TanStack. Live on Pelindo\'s application portal.',
 			description: `<p>This project was built to rebuild the Truck Booking System (TBS) into a new Micro Frontend architecture. The original TBS required a lot of configuration just to integrate MFE, so we decided to create a new project from scratch dedicated solely to that integration.</p>
 			<p>Throughout this project, I learned a great deal about TanStack, Micro Frontend, and TypeScript. It was a deliberate challenge to build with an entirely new stack and step out of my comfort zone. There were learning curves along the way, but the result was really worth.
 	Currently the system is live on the Adhara web page, Pelindo's application portal.</p>
