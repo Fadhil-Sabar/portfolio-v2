@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/projects';
 	import { reveal } from '$lib/actions/reveal';
+	import { lang } from '$lib/stores/lang';
+	import { t } from '$lib/stores/t';
 
 	interface Props {
 		project: Project;
@@ -8,7 +10,9 @@
 	}
 	let { project, index: i }: Props = $props();
 
-	let { title, live, slug, index, blurb, stack, year, type, image } = $derived(project);
+	let { title, live, slug, index, stack, year, image } = $derived(project);
+	let blurb = $derived(project.blurb[$lang]);
+	let type = $derived(project.type[$lang]);
 	const GC = '!<>-_\\/[]{}—=+*^?#$@%&';
 	let titleEl: HTMLElement;
 	let _glitching = false;
@@ -61,7 +65,7 @@
 		{/if}
 		<div class="pc-stripes"></div>
 		<div class="pc-label">
-			<span>COVER IMAGE</span>
+			<span>{$t('project.cover')}</span>
 			<span class="pc-index">{index}</span>
 		</div>
 		<div class="scanline-sweep"></div>

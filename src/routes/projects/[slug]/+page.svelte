@@ -5,12 +5,18 @@
 	import Cursor from '$lib/components/Cursor.svelte';
 	import Nav from '$lib/components/sections/Nav.svelte';
 	import Footer from '$lib/components/sections/Footer.svelte';
+	import { lang } from '$lib/stores/lang';
+	import { t } from '$lib/stores/t';
 
 	let { data }: { data: PageData } = $props();
 	let p = $derived(data.project);
+	let blurb = $derived(p.blurb[$lang]);
+	let description = $derived(p.description[$lang]);
+	let role = $derived(p.role[$lang]);
+	let type = $derived(p.type[$lang]);
 
 	const SITE = 'https://fadhil-andriawan.dev';
-	let DESC = $derived(p.blurb);
+	let DESC = $derived(blurb);
 	let URL = $derived(SITE + '/projects/' + p.slug);
 	let OG_IMAGE = $derived(p.image ? SITE + p.image : SITE + '/images/profile-pic.jpeg');
 
@@ -23,13 +29,13 @@
 		description: DESC,
 		url: URL,
 		image: OG_IMAGE,
-		inLanguage: 'en',
+		inLanguage: $lang,
 		about: {
 			'@type': 'SoftwareApplication',
 			name: p.title,
 			applicationCategory: 'WebApplication',
 			operatingSystem: 'Web',
-			description: p.blurb
+			description: blurb
 		},
 		author: {
 			'@type': 'Person',
@@ -42,23 +48,23 @@
 
 <svelte:head>
 	<title>{p.title} — Fadhil Andriawan</title>
-	<meta name="description" content={p.blurb} />
+	<meta name="description" content={blurb} />
 	<link rel="canonical" href={URL} />
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="{p.title} — Fadhil Andriawan" />
-	<meta property="og:description" content={p.blurb} />
+	<meta property="og:description" content={blurb} />
 	<meta property="og:url" content={URL} />
 	<meta property="og:image" content={OG_IMAGE} />
 	<meta property="og:image:alt" content={p.title} />
 	<meta property="og:type" content="article" />
 	<meta property="og:site_name" content="Fadhil Andriawan" />
-	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale" content={$lang === 'id' ? 'id_ID' : 'en_US'} />
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{p.title} — Fadhil Andriawan" />
-	<meta name="twitter:description" content={p.blurb} />
+	<meta name="twitter:description" content={blurb} />
 	<meta name="twitter:image" content={OG_IMAGE} />
 	<meta name="twitter:image:alt" content={p.title} />
 
@@ -72,18 +78,18 @@
 
 <main>
 	<div class="back-row" use:reveal>
-		<a href="/#projects" class="back-link">← Back to projects</a>
+		<a href="/#projects" class="back-link">← {$t('project.back')}</a>
 	</div>
 
 	<div class="hero-section">
 		<div class="section-container">
 			<div class="project-meta-top" use:reveal>
 				<span class="meta-index">// {p.index}</span>
-				<span class="meta-type">{p.type}</span>
+				<span class="meta-type">{type}</span>
 				<span class="meta-year">{p.year}</span>
 			</div>
 			<h1 class="project-title" use:reveal={100}>{p.title}</h1>
-			<p class="project-blurb" use:reveal={200}>{p.blurb}</p>
+			<p class="project-blurb" use:reveal={200}>{blurb}</p>
 
 			<div class="stack-row" use:reveal={300}>
 				{#each p.stack as tag}
@@ -94,7 +100,7 @@
 			{#if p.live}
 				<div class="cta-row" use:reveal={400}>
 					<a href={p.live} target="_blank" rel="noopener" class="live-btn">
-						View Live ↗
+						{$t('project.live')} ↗
 					</a>
 				</div>
 			{/if}
@@ -112,7 +118,7 @@
 			</picture>
 		{/if}
 		<div class="cover-label">
-			<span>PROJECT COVER</span>
+			<span>{$t('project.cover')}</span>
 			<span class="cover-sub">// {p.index}</span>
 		</div>
 	</div>
@@ -123,38 +129,43 @@
 		<div class="section-container">
 			<div class="detail-grid" use:reveal>
 				<div class="detail-col">
-					<div class="detail-col-label">// Role</div>
-					<div class="detail-col-value">{p.role}</div>
+					<div class="detail-col-label">// {$t('project.role')}</div>
+					<div class="detail-col-value">{role}</div>
 				</div>
 				<div class="detail-col">
-					<div class="detail-col-label">// Type</div>
-					<div class="detail-col-value">{p.type}</div>
+					<div class="detail-col-label">// {$t('project.type')}</div>
+					<div class="detail-col-value">{type}</div>
 				</div>
 				<div class="detail-col">
-					<div class="detail-col-label">// Year</div>
+					<div class="detail-col-label">// {$t('project.year')}</div>
 					<div class="detail-col-value">{p.year}</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	{#if p.description}
+	{#if description}
 		<div class="section-divider"></div>
 
 		<div class="description-section">
 			<div class="section-container">
 				<div class="description-grid" use:reveal>
 					<div class="description-col">
-						<div class="detail-col-label">// Description</div>
+						<div class="detail-col-label">// {$t('project.description')}</div>
 					</div>
 					<div class="description-content">
-						{@html p.description}
+						<div class="localized-description lang-en">
+							{@html p.description.en}
+						</div>
+						<div class="localized-description lang-id">
+							{@html p.description.id}
+						</div>
 					</div>
 				</div>
 				{#if p.repo}
 					<div class="repo-row" use:reveal={200}>
 						<a href={p.repo} target="_blank" rel="noopener" class="repo-btn">
-							View Source Code ↗
+							{$t('project.source')} ↗
 						</a>
 					</div>
 				{/if}
@@ -369,6 +380,9 @@
 		color: var(--text-base);
 		font-weight: 600;
 	}
+	.localized-description.lang-id { display: none; }
+	:global(html[lang='id']) .localized-description.lang-en { display: none; }
+	:global(html[lang='id']) .localized-description.lang-id { display: block; }
 	.repo-row {
 		margin-top: 40px;
 		padding-top: 32px;
