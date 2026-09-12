@@ -5,7 +5,7 @@ import { projects } from '../src/lib/data/projects';
 test('every project has English and Indonesian values for translatable fields', () => {
 	const fields = ['blurb', 'description', 'role', 'type'] as const;
 
-	expect(projects).toHaveLength(11);
+	expect(projects).toHaveLength(12);
 	for (const project of projects) {
 		for (const field of fields) {
 			const value = project[field];

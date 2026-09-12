@@ -22,6 +22,26 @@ export interface Project {
 
 	export const projects: Project[] = [
 		{
+			slug: 'mimin-webui',
+			index: '012',
+			title: 'Mimin WebUI',
+			blurb: { en: 'Self-hosted, project-based AI agent workspace with persistent chat, project knowledge, tool execution, and multi-provider model support.', id: 'Workspace AI agent berbasis proyek yang dapat di-self-host, dengan chat persisten, project knowledge, eksekusi tool, dan dukungan berbagai provider model.' },
+			description: { en: `<p>Mimin WebUI is a self-hosted AI agent workspace organized around projects. It brings persistent conversations, project knowledge, model discovery, tool execution, and file attachments into one focused interface.</p>
+<p>I built the frontend and backend as a full-stack SvelteKit application. The agent streams responses through Server-Sent Events, stores projects and conversation history in PostgreSQL with Drizzle ORM, and supports OpenAI, Anthropic, and Google model providers. Project files can be indexed with hybrid keyword and vector search, including page-aware citations and local OCR.</p>
+<p>The application also includes account-based data isolation, encrypted provider API key storage, configurable web search, and an optional browser extension bridge for agent-driven browsing. It can be deployed with Docker Compose and is released as open-source software under the AGPL.</p>`, id: `<p>Mimin WebUI adalah workspace AI agent yang dapat di-self-host dan diorganisasi berdasarkan proyek. Aplikasi ini menggabungkan percakapan persisten, project knowledge, pencarian model, eksekusi tool, dan lampiran berkas dalam satu antarmuka yang terfokus.</p>
+<p>Saya membangun frontend dan backend sebagai aplikasi full-stack SvelteKit. Agent mengirim respons secara streaming melalui Server-Sent Events, menyimpan proyek serta riwayat percakapan di PostgreSQL dengan Drizzle ORM, dan mendukung provider model OpenAI, Anthropic, serta Google. Berkas proyek dapat diindeks menggunakan pencarian hybrid keyword dan vector, lengkap dengan sitasi berbasis halaman dan OCR lokal.</p>
+<p>Aplikasi ini juga memiliki isolasi data berbasis akun, penyimpanan API key provider yang terenkripsi, web search yang dapat dikonfigurasi, serta browser extension opsional untuk browsing oleh agent. Mimin WebUI dapat dideploy dengan Docker Compose dan dirilis sebagai perangkat lunak open-source berlisensi AGPL.</p>` },
+			year: '2026',
+			role: { en: 'Solo Developer', id: 'Pengembang Solo' },
+			type: { en: 'Personal · Open Source', id: 'Pribadi · Open Source' },
+			category: 'personal',
+			aiMade: true,
+			stack: ['SvelteKit', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Docker'],
+			live: null,
+			repo: 'https://github.com/Fadhil-Sabar/mimin-webui',
+			image: null
+		},
+		{
 			slug: 'twibbonify',
 			index: '011',
 			title: 'Twibbonify',
