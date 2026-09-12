@@ -39,7 +39,7 @@ export interface Project {
 			stack: ['SvelteKit', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Docker'],
 			live: null,
 			repo: 'https://github.com/Fadhil-Sabar/mimin-webui',
-			image: null
+			image: '/images/projects/project12.webp'
 		},
 		{
 			slug: 'twibbonify',
