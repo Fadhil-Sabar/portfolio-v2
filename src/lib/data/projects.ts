@@ -13,6 +13,7 @@ export interface Project {
 		role: LocalizedText;
 		type: LocalizedText;
 		category: 'work' | 'personal';
+		aiMade?: boolean;
 		stack: string[];
 		live: string | null;
 		repo: string | null;
@@ -34,6 +35,7 @@ export interface Project {
 			role: { en: 'Solo Developer', id: 'Pengembang Solo' },
 			type: { en: 'Personal', id: 'Pribadi' },
 			category: 'personal',
+			aiMade: true,
 			stack: ['React', 'TypeScript', 'Vite', 'IndexedDB/Dexie', 'PWA'],
 			live: 'https://twibbonify.fadhil-andriawan.dev/',
 			repo: 'https://github.com/Fadhil-Sabar/twibbonify',
@@ -55,6 +57,7 @@ export interface Project {
 			role: { en: 'Solo Developer', id: 'Pengembang Solo' },
 			type: { en: 'Personal', id: 'Pribadi' },
 			category: 'personal',
+      aiMade: true,
 			stack: ['Ollama', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'Jina AI'],
 			live: null,
 			repo: 'https://github.com/Fadhil-Sabar/ollama-interaction',

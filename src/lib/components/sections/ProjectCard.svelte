@@ -10,7 +10,7 @@
 	}
 	let { project, index: i }: Props = $props();
 
-	let { title, live, slug, index, stack, year, image } = $derived(project);
+	let { title, live, slug, index, stack, year, image, aiMade } = $derived(project);
 	let blurb = $derived(project.blurb[$lang]);
 	let type = $derived(project.type[$lang]);
 	const GC = '!<>-_\\/[]{}—=+*^?#$@%&';
@@ -71,7 +71,7 @@
 		<div class="scanline-sweep"></div>
 	</div>
 	<div class="project-card-body">
-		<div class="project-index">// {index} · {type.toUpperCase()}</div>
+		<div class="project-index">// {index} · {type.toUpperCase()}{#if aiMade}<span class="slop-tag">· Slop</span>{/if}</div>
 		<div class="project-title glitch-wrap" bind:this={titleEl} data-text={title}>{title}</div>
 		<div class="project-blurb">{blurb}</div>
 		<div class="project-tags">
@@ -159,6 +159,9 @@
 		color: var(--text-muted);
 		text-transform: uppercase;
 		margin-bottom: 10px;
+	}
+	.slop-tag {
+		color: var(--text-soft);
 	}
 	.project-title {
 		font-family: var(--font-display);
