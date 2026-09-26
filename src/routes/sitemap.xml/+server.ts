@@ -4,15 +4,12 @@ const SITE = 'https://fadhil-andriawan.dev';
 
 export const prerender = true;
 
-/** Format a date as YYYY-MM-DD */
-function fmt(d: Date): string {
-	return d.toISOString().slice(0, 10);
-}
-
+// `lastmod` is intentionally omitted. The data layer only carries a year (see
+// `Project.year`), so any per-project date here would be invented, and stamping the
+// build date instead falsely tells crawlers every URL changed on every deploy.
+// Per the sitemap spec, `lastmod` is optional.
 export function GET() {
-	const today = fmt(new Date());
-
-	const urls: { loc: string; priority: string; changefreq: string; lastmod?: string }[] = [
+	const urls: { loc: string; priority: string; changefreq: string }[] = [
 		{ loc: '/', priority: '1.0', changefreq: 'monthly' },
 		...projects.map((p) => ({
 			loc: `/projects/${p.slug}`,
@@ -27,7 +24,6 @@ ${urls
 	.map(
 		(u) => `  <url>
     <loc>${SITE}${u.loc}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`

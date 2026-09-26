@@ -16,8 +16,10 @@
 | `bun run prepare` | Generate `.svelte-kit/` types (needed before typecheck) |
 | `bun run check` | Typecheck via `svelte-check` |
 | `bun run check:watch` | Watch mode typecheck |
+| `bun test` | Run the `bun:test` suite in `tests/` |
+| `bun run deploy` | `wrangler pages deploy` of the `build/` output |
 
-Always run `prepare` before `check`.
+Always run `prepare` before `check`. `check` already chains it, so `bun run check` is enough.
 
 ## Architecture
 - **All routes prerendered** — `src/routes/+layout.ts` sets `export const prerender = true`
@@ -29,7 +31,8 @@ Always run `prepare` before `check`.
 - **Custom cursor**: `Cursor.svelte` component + `cursor: none` on `body` — do not remove
 - **`prefers-reduced-motion: reduce`** respected in global CSS
 - **Design reference**: `_design-reference/portfolio.html` (visual source of truth)
-- **No test framework** installed
+- **Tests**: `bun:test` (built into the bun runtime, no extra dependency) in `tests/`. Currently one file, `projects-localization.test.ts`, which asserts every project in `$lib/data/projects.ts` has both `en` and `id` values for each translatable field — new projects must ship both languages or `bun test` fails.
+- **Hosting**: Cloudflare Pages. `wrangler.jsonc` points at `./build`; cache/security headers live in `static/_headers`.
 
 ## Conventions
 - Svelte 5 runes syntax (`$props()`, `$state()`, `{@render children()}`) — no legacy `export let` or `$$props`
@@ -43,3 +46,6 @@ Always run `prepare` before `check`.
 - `svelte-kit sync` must run before `svelte-check` to generate `.svelte-kit/tsconfig.json`
 - Language toggle buttons use `cursor: none` (custom cursor) — not a bug
 - TypeScript 6 uses `rewriteRelativeImportExtensions` in tsconfig — `.js` extensions in imports may be required
+- **JSON-LD must be injected with `{@html}` inside `<svelte:head>`**, not a plain `<script type="application/ld+json">{...}</script>` block — a plain block gets HTML-escaped by Svelte and corrupts the JSON. Both `+page.svelte` and `projects/[slug]/+page.svelte` do this.
+- **No `hreflang` tags, by design.** Language is a client-side localStorage store, so every crawlable URL serves identical HTML; alternate links would all point at the same page. Don't "fix" this by adding them back — it needs URL-prefixed locales instead.
+- `sitemap.xml` omits `lastmod` on purpose: the data layer only has `Project.year`, so any date would be invented and the build date falsely implies every page changed on every deploy.

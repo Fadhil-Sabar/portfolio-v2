@@ -78,9 +78,9 @@
 	<meta name="twitter:image:alt" content="Fadhil Andriawan" />
 
 	<!-- JSON-LD Structured Data -->
+	<!-- {@html} (not a plain script block) so Svelte doesn't HTML-escape the embedded JSON -->
+	{@html ldHtml}
 </svelte:head>
-
-{@html ldHtml}
 
 <NoiseOverlay />
 <Cursor />

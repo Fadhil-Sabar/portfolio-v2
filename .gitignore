@@ -4,3 +4,7 @@ build/
 .wrangler/
 .env
 
+# Local scratch, superseded by _design-reference/ and static/
+/portfolio.html
+/uploads/
+

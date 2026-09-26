@@ -68,9 +68,10 @@
 	<meta name="twitter:image" content={OG_IMAGE} />
 	<meta name="twitter:image:alt" content={p.title} />
 
+	<!-- JSON-LD Structured Data -->
+	<!-- {@html} (not a plain script block) so Svelte doesn't HTML-escape the embedded JSON -->
+	{@html ldHtml}
 </svelte:head>
-
-{@html ldHtml}
 
 <NoiseOverlay />
 <Cursor />
