@@ -16,6 +16,7 @@
 		<li><a href="/#skills"     onclick={closeMenu}>{$t('nav.skills')}</a></li>
 		<li><a href="/#experience" onclick={closeMenu}>{$t('nav.experience')}</a></li>
 		<li><a href="/#contact"    onclick={closeMenu}>{$t('nav.contact')}</a></li>
+		<li><a href="/#stats"     onclick={closeMenu}>{$t('nav.stats')}</a></li>
 	</ul>
 	<div class="nav-right">
 		<a href="/CV_Fadhil_Andriawan.pdf" download="Fadhil_Andriawan_CV.pdf" class="cv-btn">
@@ -34,6 +35,7 @@
 	<a href="/#skills"     onclick={closeMenu}>{$t('nav.skills')}</a>
 	<a href="/#experience" onclick={closeMenu}>{$t('nav.experience')}</a>
 	<a href="/#contact"    onclick={closeMenu}>{$t('nav.contact')}</a>
+	<a href="/#stats"     onclick={closeMenu}>{$t('nav.stats')}</a>
 	<a href="/CV_Fadhil_Andriawan.pdf" download="Fadhil_Andriawan_CV.pdf">{$t('nav.cv')}</a>
 	<LangToggle />
 </div>
@@ -65,7 +67,7 @@
 	}
 	.nav-center {
 		display: flex;
-		gap: 28px;
+		gap: 24px;
 		list-style: none;
 		align-items: center;
 	}

@@ -1,0 +1,19 @@
+{
+	"username": "FadhilAndr1",
+	"streak": 1044,
+	"totalXp": 17804,
+	"joined": "2022-05-14",
+	"courses": [
+		{
+			"title": "Japanese",
+			"language": "ja",
+			"xp": 17577
+		},
+		{
+			"title": "English",
+			"language": "en",
+			"xp": 227
+		}
+	],
+	"fetchedAt": "2026-09-26T16:12:45.770Z"
+}

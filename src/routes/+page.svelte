@@ -9,7 +9,11 @@
 	import Skills from '$lib/components/sections/Skills.svelte';
 	import Experience from '$lib/components/sections/Experience.svelte';
 	import Contact from '$lib/components/sections/Contact.svelte';
+	import Stats from '$lib/components/sections/Stats.svelte';
 	import Footer from '$lib/components/sections/Footer.svelte';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 
 	const SITE = 'https://fadhil-andriawan.dev';
 	const TITLE = 'Fadhil Andriawan — Web Developer';
@@ -97,4 +101,6 @@
 <Experience />
 <SectionDivider />
 <Contact />
+<SectionDivider />
+<Stats stats={data.github} duolingo={data.duolingo} />
 <Footer />
