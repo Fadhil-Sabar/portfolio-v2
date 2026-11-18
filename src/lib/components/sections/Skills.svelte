@@ -6,7 +6,7 @@
 
 <section id="skills">
 	<div class="section-container">
-		<div class="section-label" use:reveal>// 02 — Stack</div>
+		<div class="section-label" use:reveal>// 03 — Stack</div>
 		<h2 class="section-title" use:reveal>{$t('skills.title')}</h2>
 		<div class="skills-grid" use:reveal={100}>
 			{#each skills as cat}
@@ -52,7 +52,7 @@
 	}
 	.skills-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		gap: 1px;
 		background: var(--border-faint);
 		border: 1px solid var(--border-faint);
@@ -91,10 +91,11 @@
 		color: var(--border-hard);
 		flex-shrink: 0;
 	}
-	@media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (max-width: 1100px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+	@media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } .skill-category:last-child { grid-column: span 2; } }
 	@media (max-width: 768px) { .section-container { padding: 72px 20px; } }
 	@media (max-width: 480px) {
-		.skills-grid { grid-template-columns: 1fr; }
+		.skills-grid { grid-template-columns: 1fr; } .skill-category:last-child { grid-column: auto; }
 		.section-container { padding: 56px 16px; }
 	}
 </style>

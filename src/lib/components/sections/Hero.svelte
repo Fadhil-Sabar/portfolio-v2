@@ -57,7 +57,7 @@
 		</div>
 		<p class="hero-tagline">{$t('hero.tagline')}</p>
 		<div class="hero-meta">
-			<div class="hero-meta-item">// EXP <span>3+ Yrs</span></div>
+			<div class="hero-meta-item">// EXP <span>4+ Yrs</span></div>
 			<div class="hero-meta-item">// STACK <span>Full-Stack</span></div>
 			<div class="hero-meta-item">// LOC <span>Jakarta, ID</span></div>
 		</div>

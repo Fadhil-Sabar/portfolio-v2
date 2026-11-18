@@ -7,7 +7,7 @@
 
 <section id="projects">
 	<div class="section-container">
-		<div class="section-label" use:reveal>// 01 — Selected Work</div>
+		<div class="section-label" use:reveal>// 02 — Selected Work</div>
 		<h2 class="section-title" use:reveal>{$t('projects.title')}</h2>
 
 		{#each projectCategories as category, i}

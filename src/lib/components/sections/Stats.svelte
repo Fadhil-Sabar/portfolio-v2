@@ -60,7 +60,7 @@
 
 <section id="stats">
 	<div class="section-container">
-		<div class="section-label" use:reveal>// 05 — GitHub</div>
+		<div class="section-label" use:reveal>// 06 — GitHub</div>
 		<h2 class="section-title" use:reveal>{$t('stats.title')}</h2>
 
 		<div class="panel" use:reveal={100}>

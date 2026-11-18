@@ -71,7 +71,7 @@
 		<div class="scanline-sweep"></div>
 	</div>
 	<div class="project-card-body">
-		<div class="project-index">// {index} · {type.toUpperCase()}{#if aiMade}<span class="slop-tag">· Slop</span>{/if}</div>
+		<div class="project-index">// {index} · {type.toUpperCase()}{#if aiMade}<span class="agent-tag">· {$t('project.agentBadge')}</span>{/if}</div>
 		<div class="project-title glitch-wrap" bind:this={titleEl} data-text={title}>{title}</div>
 		<div class="project-blurb">{blurb}</div>
 		<div class="project-tags">
@@ -160,7 +160,7 @@
 		text-transform: uppercase;
 		margin-bottom: 10px;
 	}
-	.slop-tag {
+	.agent-tag {
 		color: var(--text-soft);
 	}
 	.project-title {

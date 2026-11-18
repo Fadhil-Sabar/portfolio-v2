@@ -6,7 +6,7 @@
 
 <section id="experience">
 	<div class="section-container">
-		<div class="section-label" use:reveal>// 03 — History</div>
+		<div class="section-label" use:reveal>// 04 — History</div>
 		<h2 class="section-title" use:reveal>{$t('experience.title')}</h2>
 		<div class="timeline">
 			{#each experience as e, i}

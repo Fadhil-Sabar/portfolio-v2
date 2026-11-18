@@ -26,7 +26,7 @@
 			<div class="about-facts">
 				<div class="about-fact">
 					<span class="fact-label">{$t('about.fact1')}</span>
-					<span class="fact-value">3+ YRS</span>
+					<span class="fact-value">4+ YRS</span>
 				</div>
 				<div class="about-fact">
 					<span class="fact-label">{$t('about.fact2')}</span>
@@ -42,7 +42,7 @@
 				</div>
 				<div class="about-fact">
 					<span class="fact-label">{$t('about.gpa')}</span>
-					<span class="fact-value">3.39</span>
+					<span class="fact-value">3.48</span>
 				</div>
 				<div class="about-fact">
 					<span class="fact-label">TOEIC</span>

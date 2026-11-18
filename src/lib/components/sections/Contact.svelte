@@ -7,7 +7,7 @@
 	<div class="section-container">
 		<div class="contact-grid">
 			<div>
-				<div class="section-label" use:reveal>// 04 — Contact</div>
+				<div class="section-label" use:reveal>// 05 — Contact</div>
 				<h2 class="contact-heading" use:reveal>{$t('contact.title')}</h2>
 				<p class="contact-sub" use:reveal>{$t('contact.sub')}</p>
 			</div>

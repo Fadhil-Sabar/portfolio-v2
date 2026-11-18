@@ -5,12 +5,16 @@ export interface SkillCategory {
 
 export const skills: SkillCategory[] = [
 	{
+		labelKey: 'skills.cat0',
+		items: ['Claude Code', 'Codex', 'Gemini CLI', 'pi', 'MCP servers', 'Agent guardrails', 'RAG']
+	},
+	{
 		labelKey: 'skills.cat1',
-		items: ['JavaScript', 'TypeScript', 'Java', 'Dart (Flutter)', 'SQL / PL-SQL']
+		items: ['JavaScript', 'TypeScript', 'Java', 'Go', 'Dart (Flutter)', 'SQL / PL-SQL']
 	},
 	{
 		labelKey: 'skills.cat2',
-		items: ['Next.js / React', 'Tailwind CSS', 'Bootstrap', 'Material UI', 'Responsive Design']
+		items: ['Next.js / React', 'Tailwind CSS', 'Bootstrap', 'Material UI', 'Responsive Design', 'SvelteKit', 'Vite', 'Webpack Module Federation']
 	},
 	{
 		labelKey: 'skills.cat3',
@@ -18,6 +22,6 @@ export const skills: SkillCategory[] = [
 	},
 	{
 		labelKey: 'skills.cat4',
-		items: ['PostgreSQL', 'Oracle DB', 'GitHub / GitLab', 'Linux (Ubuntu/Arch)', 'Asana / Trello']
+		items: ['PostgreSQL', 'Oracle DB', 'GitHub / GitLab', 'Linux (Ubuntu/Arch)', 'Docker', 'Playwright', 'Oracle Cloud (OCI)', 'Asana / Trello']
 	}
 ];
