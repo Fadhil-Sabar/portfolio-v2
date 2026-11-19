@@ -35,7 +35,7 @@ export interface Project {
 			stack: ['Next.js', 'Module Federation', 'Go', 'PostgreSQL'],
 			live: null,
 			repo: null,
-			image: null
+			image: '/images/projects/work-adhara-customs.webp'
 		},
 		{
 			slug: 'work-mcp',
@@ -67,7 +67,7 @@ export interface Project {
 			stack: ['Playwright', 'SvelteKit', 'Docker'],
 			live: null,
 			repo: null,
-			image: null
+			image: '/images/projects/work-e2e-runner.webp'
 		},
 		{
 			slug: 'mimin-webui',
