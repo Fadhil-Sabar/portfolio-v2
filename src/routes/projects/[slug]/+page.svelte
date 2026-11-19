@@ -163,6 +163,18 @@
 						</div>
 					</div>
 				</div>
+				{#if p.detailImages?.length}
+					<div class="detail-images">
+						{#each p.detailImages as img}
+							<figure class="detail-figure" use:reveal>
+								<img src={img.src} alt={img.alt} loading="lazy" decoding="async" class="detail-img" />
+								{#if img.caption}
+									<figcaption class="detail-caption">{img.caption[$lang]}</figcaption>
+								{/if}
+							</figure>
+						{/each}
+					</div>
+				{/if}
 				{#if p.repo}
 					<div class="repo-row" use:reveal={200}>
 						<a href={p.repo} target="_blank" rel="noopener" class="repo-btn">
@@ -384,6 +396,27 @@
 	.localized-description.lang-id { display: none; }
 	:global(html[lang='id']) .localized-description.lang-en { display: none; }
 	:global(html[lang='id']) .localized-description.lang-id { display: block; }
+	.detail-images {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	.detail-figure { margin: 0; }
+	.detail-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border: 1px solid var(--border-faint);
+		background: var(--bg-elevated);
+	}
+	.detail-caption {
+		margin-top: 10px;
+		font-family: var(--font-mono);
+		font-size: 10px;
+		letter-spacing: 0.1em;
+		color: var(--text-muted);
+	}
 	.repo-row {
 		margin-top: 40px;
 		padding-top: 32px;

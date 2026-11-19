@@ -18,6 +18,7 @@ export interface Project {
 		live: string | null;
 		repo: string | null;
 		image: string | null;
+		detailImages?: { src: string; alt: string; caption?: LocalizedText }[];
 	}
 
 	export const projects: Project[] = [
@@ -51,7 +52,14 @@ export interface Project {
 			stack: ['Bun', 'Hono', 'Oracle', 'PostgreSQL'],
 			live: null,
 			repo: null,
-			image: null
+			image: '/images/projects/work-mcp-cover.webp',
+			detailImages: [
+				{
+					src: '/images/projects/work-mcp-transcript.webp',
+					alt: 'Claude Code session querying REQUEST_HEADER through work_mcp, with placeholder data',
+					caption: { en: 'Example session with placeholder data', id: 'Contoh sesi dengan data contoh' }
+				}
+			]
 		},
 		{
 			slug: 'e2e-automation-runner',
