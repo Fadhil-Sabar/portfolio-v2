@@ -49,7 +49,7 @@ export interface Project {
 			type: { en: 'Work · PT. ILCS', id: 'Kerja · PT. ILCS' },
 			category: 'work',
 			aiMade: true,
-			stack: ['Bun', 'Hono', 'Oracle', 'PostgreSQL'],
+			stack: ['Bun', 'Hono', 'MCP', 'Oracle'],
 			live: null,
 			repo: null,
 			image: '/images/projects/work-mcp-cover.webp',
