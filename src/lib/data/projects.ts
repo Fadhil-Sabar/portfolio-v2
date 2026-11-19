@@ -40,7 +40,7 @@ export interface Project {
 		{
 			slug: 'mch-customs-declaration',
 			index: '014',
-			title: 'MCH Customs Declaration',
+			title: 'Adhara - Customs Declaration',
 			blurb: { en: "Customs declaration module for Pelindo's Maritime Connectivity Hub with AI document extraction, cost component engine, and CEISA webhook tracking, built with separate frontend and backend agent sessions.", id: 'Modul deklarasi kepabeanan untuk Maritime Connectivity Hub Pelindo dengan ekstraksi dokumen berbasis AI, mesin komponen biaya, dan pelacakan webhook CEISA, dibangun dengan sesi agent frontend dan backend yang terpisah.' },
 			description: { en: `<p>Customs declaration module for Pelindo's Maritime Connectivity Hub with AI document extraction, cost component engine, and CEISA webhook tracking, built with separate frontend and backend agent sessions.</p>`, id: `<p>Modul deklarasi kepabeanan untuk Maritime Connectivity Hub Pelindo dengan ekstraksi dokumen berbasis AI, mesin komponen biaya, dan pelacakan webhook CEISA, dibangun dengan sesi agent frontend dan backend yang terpisah.</p>` },
 			year: '2026',
